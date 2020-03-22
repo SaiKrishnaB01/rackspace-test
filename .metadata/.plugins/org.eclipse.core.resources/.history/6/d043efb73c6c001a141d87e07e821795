@@ -1,0 +1,5 @@
+package com.rackspace.onlinecodingtest.model;
+
+public class ReversedResult {
+
+}

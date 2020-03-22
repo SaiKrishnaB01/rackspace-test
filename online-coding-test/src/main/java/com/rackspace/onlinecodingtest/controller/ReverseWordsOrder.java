@@ -1,0 +1,28 @@
+package com.rackspace.onlinecodingtest.controller;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import com.rackspace.onlinecodingtest.model.ReversedResult;
+
+@RestController("/")
+public class ReverseWordsOrder {
+
+	
+	@RequestMapping(value="/api/{line}", method=RequestMethod.GET,produces={MediaType.APPLICATION_JSON_VALUE})
+	public ReversedResult reverseOrder(@PathVariable("line") String line){
+		String[] words = line.split(" ");
+		for(int i=0; i<words.length/2; i++){
+			String temp = words[words.length-1-i];
+			words[words.length-1-i] = words[i];
+			words[i] = temp;
+		}
+		
+		return new ReversedResult(Arrays.stream(words).parallel().collect(Collectors.joining(" ")));
+	}
+}

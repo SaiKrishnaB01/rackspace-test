@@ -1,0 +1,28 @@
+package com.rackspace.onlinecodingtest.controller;
+
+import java.util.Arrays;
+import java.util.StringJoiner;
+import java.util.function.BinaryOperator;
+import java.util.stream.Stream;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController("/")
+public class ReverseWordsOrder {
+
+	
+	@GetMapping("/api/{line}")
+	public String reverseOrder(@PathVariable("line") String line){
+		String[] words = line.split(" ");
+		StringJoiner sj = new StringJoiner(" ");
+		StringJoiner sj1 = new StringJoiner(" ");
+		for(int i=0; i<words.length/2; i++){
+			sj.add(words[i]);
+			sj1.add(words[words.length-1-i]);
+		}
+		
+		return sj1.merge(sj).toString();
+	}
+}

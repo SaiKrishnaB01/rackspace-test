@@ -1,0 +1,13 @@
+package com.rackspace.onlinecodingtest.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ReverseWordsOrder {
+
+	@GetMapping("/reverse")
+	public String reverseOrder(){
+		
+	}
+}

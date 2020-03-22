@@ -1,0 +1,13 @@
+package com.rackspace.onlinecodingtest;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class OnlineCodingTestApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

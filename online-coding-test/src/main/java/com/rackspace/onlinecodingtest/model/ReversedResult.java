@@ -1,0 +1,19 @@
+package com.rackspace.onlinecodingtest.model;
+
+public class ReversedResult{
+	private String reversed;
+	public ReversedResult(){
+		
+	}
+	public ReversedResult(String reversed){
+		this.reversed = reversed;
+	}
+
+	public String getReversed() {
+		return reversed;
+	}
+
+	public void setReversed(String reversed) {
+		this.reversed = reversed;
+	}
+}

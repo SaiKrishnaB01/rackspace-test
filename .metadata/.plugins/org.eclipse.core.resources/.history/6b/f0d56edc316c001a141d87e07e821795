@@ -1,0 +1,15 @@
+package com.rackspace.onlinecodingtest.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ReverseWordsOrder {
+
+	
+	@GetMapping("/api/{line}")
+	public String reverseOrder(@PathVariable("line") String line){
+		return line;
+	}
+}
